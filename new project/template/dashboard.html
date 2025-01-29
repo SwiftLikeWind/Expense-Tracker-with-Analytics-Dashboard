@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Welcome, {{ current_user.username }}!</h1>
+        <a href="{{ url_for('add_expense') }}" class="btn btn-success">Add Expense</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+
+        <h2 class="mt-4">Monthly Spending Trends</h2>
+        <img src="{{ url_for('static', filename='monthly_trends.png') }}" alt="Monthly Trends" class="img-fluid">
+
+        <h2 class="mt-4">Spending by Category</h2>
+        <img src="{{ url_for('static', filename='category_pie.png') }}" alt="Category Pie Chart" class="img-fluid">
+    </div>
+</body>
+</html>
